@@ -1,0 +1,51 @@
+.background-image(@url)
+{
+	background-attachment: fixed;
+	background-color: #111;
+	background-position: center;
+    background-size: cover;
+	background-image: url('@{images}/bg/@{url}.jpg');
+	color: white;
+}
+.buttonGrizzly(@color, @hover: white)
+{
+	border: 2px solid @color;
+	border-radius: 0;
+	color: @color;
+	font-weight: bold;
+	padding: 8px 20px;
+	transition: all .2 ease;
+	&:hover
+	{
+		color: @hover;
+		background-color: @color;
+	}
+}
+.defaultGrizzly()
+{
+	margin: 0;
+	padding: 0;
+}
+.show()
+{
+	display: initial;
+}
+.hide()
+{
+	display: none;
+}
+.social(@url) 
+{
+	&.@{url} img 
+	{ 
+		content: url('@{img-url-icon}/@{url}.png'); 
+	}	
+}
+.margin-top(@i, @j: 0) when(@i > @j)
+{
+	.m@{i} 
+	{ 
+		margin-top: @i * 1px; 
+	}
+	.margin-top(@i - 10, @j)
+}

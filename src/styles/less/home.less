@@ -1,0 +1,180 @@
+body
+{
+	background-image: 
+		radial-gradient(ellipse 59% 100% at 93% 10%, #003, rgba(0, 0, 30, .1) 90%),
+	    radial-gradient(ellipse 59% 140% at 0 120%, #003, rgba(0, 0, 30, .2) 60%),
+	    radial-gradient(ellipse 60% 100% at 5% 20%, #003,  rgba(0, 0, 30, .2) 100%),
+	    radial-gradient(ellipse 60% 100% at 100% 110%, #003, rgba(0, 0, 30, .7) 90%);
+	background-attachment: fixed;
+}
+.home
+{
+	min-height: 100vh;
+	header
+	{
+		background-position: center center;
+		background-color: #aaa;
+		background-image: url(../../images/home/puc2.jpg);
+		background-size: cover;
+		box-shadow: 0 1px 2px #222;
+		.cover
+		{
+			background: rgba(0, 0, 0, 0.35);
+			height: 500px;
+			text-shadow: 1px 1px black;
+			nav
+			{
+				background-color: transparent;
+				color: white;
+				height: 60px;
+				.sign-in
+				{
+					width: 90%;
+					img
+					{
+						float: left;
+						height: 30px;
+						margin-top: 15px;
+					}
+					input, button
+					{
+						border: none;
+						border-radius: 3px;
+						color: black;
+						height: 25px;
+						font-size: 12px;
+						margin-top: 18px;
+					}
+					input
+					{
+						margin-right: 10px;
+						margin-bottom: 5px;
+						padding-left: 7px;
+						width: 180px;
+					}
+					button
+					{
+						background: linear-gradient(#1ab, @base-ter-color);
+						color: white;
+						font-weight: 400;
+						width: 100px;	
+						&.disabled
+						{
+							background: linear-gradient(#777, #777);
+							&:hover
+							{
+								background: linear-gradient(#777, #777);
+							}				
+						}
+						&:hover
+						{
+							background: linear-gradient(#1ab, darken(@base-ter-color, 10%));
+							border-color: @base-ter-hover;
+						}	
+						a
+						{
+							color: black;
+						}
+						&.register
+						{
+							background: transparent;
+							border-color: transparent;
+							color: white;
+							font-size: 13px;
+							margin-left: 10px;
+							text-shadow: 3px 2px #000;
+						}
+					}
+					a.forgot
+					{
+						color: white;
+						font-size: 12px;
+						margin-left: 193px;
+						text-shadow: 3px 2px #000;
+						&:hover
+						{
+							color: #eee;
+						}
+					}
+					.login
+					{
+						float: right;
+					}
+				}
+			}
+			.logo
+			{
+				padding-top: 30px;
+				width: 100%;
+				img
+				{
+					height: 120px;
+					padding-top: 20px;
+					-webkit-filter: brightness(100);
+				}			
+			}
+			h1
+			{
+				color: white;
+				font-weight: 800;
+				padding-top: 20px;
+				letter-spacing: 2px;
+			}
+			h5
+			{
+				color: white;
+			}
+			button
+			{
+				background: rgba(255, 255, 255, 0.1);
+				border: 2px solid white;
+				border-radius: 20px;
+				color: white;
+				font-weight: 500;
+				height: 40px;
+				margin-top: 30px;
+				transition: all .3s ease;
+				width: 240px;
+				&:hover
+				{
+					background-color: white;
+					color: black;
+				}
+			}
+		}
+	}
+	footer
+	{
+		background-color: black;
+		color: white;
+		height: 68px;
+		padding-top: 25px;
+		nav
+		{		
+			background-color: transparent;
+			height: auto;
+			width: 80%;
+			margin: 0 auto;
+			ul
+			{
+				list-style: none;
+				margin: 0 auto;
+				li
+				{
+					font-size: 12px;
+					display: inline;
+					padding-left: 25px;
+					padding-right: 25px;
+					a
+					{
+						color: white;
+						&:hover
+						{
+							text-decoration: underline;
+						}
+					}
+				}			
+			}
+		}
+	}
+}

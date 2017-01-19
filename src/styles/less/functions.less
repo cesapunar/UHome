@@ -1,0 +1,87 @@
+.background-image(@url)
+{
+	background-attachment: fixed;
+	background-color: @base-bg-color;
+	background-image: url('@{images}/bg/@{url}.jpg');
+	background-position: center;
+    background-size: cover;
+    color: @base-bg-color;  
+	min-height: 400px;
+}
+.background-cover()
+{
+	background-size: cover;
+    background-position: center;
+	background-repeat: no-repeat;
+}
+.background-fixed()
+{
+	.background-cover;
+	background-attachment: fixed;
+}
+.social-image(@url) 
+{
+	&.@{url} img 
+	{ 
+		content: url('@{img-url-icon}/@{url}.png'); 
+	}	
+}
+.id-image(@id, @url, @ext: png)
+{
+	&#@{id}
+	{
+		content: url('@{images}/@{url}.@{ext}');
+	}
+}
+.margin-top(@i, @j: 0) when(@i => @j)
+{
+	.m@{i} 
+	{ 
+		margin-top: @i * 1px; 
+	}
+	.margin-top(@i - 10, @j)
+}
+.button-gen(@color, @hover: white, @pv: 5px, @ph: 20px)
+{
+	border: 2px solid @color;
+	border-radius: 0;
+	color: @color;
+	font-weight: bold;
+	padding: @pv @ph;
+	transition: all .2 ease;
+	&:hover
+	{
+		color: @hover;
+		background-color: @color;
+	}
+}
+.if (@condition, @property, @value) when (@condition = true)
+{
+     @{property}: @value;
+}
+.for(@list, @code) {
+    & {
+        .loop(@i:1) when (@i =< length(@list)) {
+            @value: extract(@list, @i);
+
+            @code();
+
+            .loop(@i + 1);
+        }
+
+        .loop();
+    }
+}
+.default()
+{
+	margin: 0;
+	padding: 0;
+}
+.show()
+{
+	display: initial;
+}
+.hide()
+{
+	display: none;
+}
